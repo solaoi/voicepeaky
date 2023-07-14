@@ -1,0 +1,4 @@
+voicepeaky
+*.json
+!sample.json
+.DS_Store
