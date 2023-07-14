@@ -57,24 +57,33 @@ proc pollingFiles() {.thread.} =
       for f in walkDir(workspace):
         files.add(f.path)
       files.sort();
-      for file in files:
+      for i, file in files:
         let _ = execCmd("afplay " & file)
-        removeFile(file)
+        if i == files.len - 1:
+          removeFile(file)
+        else:
+          spawn removeFile(file)
 
 proc pollingSpeeches() {.thread.} =
   {.cast(gcsafe).}:
     while true:
       if speeches.len != 0:
         let speech = speeches.pop()
-        let _ = execCmd("/Applications/voicepeak.app/Contents/MacOS/voicepeak --say " & speech.text &
-                " --narrator \"" & speech.narrator &
-                "\" --emotion happy=" & $speech.happy &
-                ",fun=" & $speech.fun &
-                ",angry=" & $speech.fun &
-                ",sad=" & $speech.fun &
-                " --speed " & $speech.speed &
-                " --pitch " & $speech.pitch &
-                " --out " & workspace & "/" & $now() & ".wav")
+        let retryLimit = 2
+        var count = 0
+        while true:
+          count += 1
+          let errCode = execCmd("/Applications/voicepeak.app/Contents/MacOS/voicepeak --say " & speech.text &
+                  " --narrator \"" & speech.narrator &
+                  "\" --emotion happy=" & $speech.happy &
+                  ",fun=" & $speech.fun &
+                  ",angry=" & $speech.fun &
+                  ",sad=" & $speech.fun &
+                  " --speed " & $speech.speed &
+                  " --pitch " & $speech.pitch &
+                  " --out " & workspace & "/" & $now() & ".wav &>/dev/null")
+          if errCode == 0 or count > retryLimit:
+            break;
 
 when isMainModule:
   if not dirExists(workspace):

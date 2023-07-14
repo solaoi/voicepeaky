@@ -78,7 +78,7 @@ brew upgrade voicepeaky
 ```sh
 # Install with wget or curl
 ## set the latest version on releases.
-VERSION=v1.0.0
+VERSION=v1.0.1
 ## set the OS you use. (macos)
 OS=linux
 ## case you use wget
@@ -90,3 +90,7 @@ tar xvf ./voicepeaky${OS}.tar.gz
 ## move it to a location in your $PATH, such as /usr/local/bin.
 mv ./voicepeaky /usr/local/bin/
 ```
+
+## Note
+
+Voicepeak occasionally crashes; Voicepeaky will automatically retry, but if an error popup appears, please close it.
