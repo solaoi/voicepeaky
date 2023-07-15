@@ -78,7 +78,7 @@ brew upgrade voicepeaky
 ```sh
 # Install with wget or curl
 ## set the latest version on releases.
-VERSION=v1.0.1
+VERSION=v1.0.2
 ## set the OS you use. (macos)
 OS=linux
 ## case you use wget

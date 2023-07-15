@@ -16,9 +16,6 @@ jobs:
     strategy:
       matrix:
         os:
-          - name: ubuntu-latest
-            platform: linux
-            cpu: amd64
           - name: macOS-latest
             platform: darwin
             cpu: amd64
@@ -45,9 +42,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: ubuntu-latest
-            asset_name_suffix: linux_amd64.tar.gz
-            asset_content_type: application/gzip
           - os: macOS-latest
             asset_name_suffix: darwin_amd64.tar.gz
             asset_content_type: application/gzip
