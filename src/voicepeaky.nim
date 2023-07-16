@@ -1,4 +1,4 @@
-import httpbeast,os,strutils,parseopt,json,asyncdispatch,options,threadpool,times,algorithm,osproc
+import httpbeast,os,strutils,parseopt,json,asyncdispatch,options,threadpool,times,algorithm,osproc,unicode
 import speech
 
 let workspace = "/tmp/voicepeaky"
@@ -27,16 +27,29 @@ proc onRequest(req: Request): Future[void]{.async.} =
         let requestBody = req.body.get.parseJson
 
         let text = requestBody["text"].getStr
-        var textArr: seq[Speech]
+        var speechArr: seq[Speech]
         for line in splitLines(text):
           for temp in line.split("。"):
             for value in temp.split("、"):
               if not value.isEmptyOrWhitespace():
-                let speech = createSpeech(requestBody, value)
-                textArr.add(speech)
+                let valueRuned = value.toRunes
+                if valueRuned.len <= 140:
+                  let speech = createSpeech(requestBody, value)
+                  speechArr.add(speech)
+                else:
+                  let separateCount = 15
+                  let count = valueRuned.len div separateCount
+                  var i = 0
+                  while i < count: 
+                    let speech = createSpeech(requestBody, valueRuned[separateCount*i..separateCount*(i+1)-1].join())
+                    speechArr.add(speech)
+                    i += 1
+                  if valueRuned.len mod separateCount != 0:
+                    let last = createSpeech(requestBody, valueRuned[separateCount*count..valueRuned.len-1].join())
+                    speechArr.add(last)
         if is_skip:
           speeches = @[]
-        speeches = @textArr.reversed & @speeches
+        speeches = @speechArr.reversed & @speeches
 
         req.send(Http201)
       except Exception:
