@@ -91,6 +91,13 @@ tar xvf ./voicepeaky${OS}.tar.gz
 mv ./voicepeaky /usr/local/bin/
 ```
 
+### 3. Nimble
+
+```sh
+# Install & Update
+nimble install voicepeaky
+```
+
 ## Note
 
 Voicepeak occasionally crashes; Voicepeaky will automatically retry, but if an error popup appears, please close it.
