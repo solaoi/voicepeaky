@@ -35,18 +35,17 @@ curl -X POST -H "Content-Type: application/json" -d '@sample.json' localhost:999
 RequestBody (JSON Format) is below.
 see a sample [here](https://raw.githubusercontent.com/solaoi/voicepeaky/main/sample.json).
 
-| Field         | Type                    | Sample                |
-| ------------- | ----------------------- | --------------------- |
-| - (parent)    | JSONObject              | -                     |
-| narrator      | string*1                | "Japanese Male Child" |
-| emotion       | JSONObject              | -                     |
-| emotion/happy | number(0 - 100)         | 0                     |
-| emotion/fun   | number(0 - 100)         | 0                     |
-| emotion/angry | number(0 - 100)         | 0                     |
-| emotion/sad   | number(0 - 100)         | 0                     |
-| speed         | number(50 - 200)        | 100                   |
-| pitch         | number(-300 - 300)      | 0                     |
-| text          | string                  | "こんにちは"            |
+| Field         | Type                    | Default             | Required |
+| ------------- | ----------------------- | ------------------- | -------- |
+| narrator      | string*1                | "Japanese Female 1" | false    |
+| emotion       | JSONObject              | -                   | false    |
+| emotion/happy | number(0 - 100)         | 0                   | false    |
+| emotion/fun   | number(0 - 100)         | 0                   | false    |
+| emotion/angry | number(0 - 100)         | 0                   | false    |
+| emotion/sad   | number(0 - 100)         | 0                   | false    |
+| speed         | number(50 - 200)        | 100                 | false    |
+| pitch         | number(-300 - 300)      | 0                   | false    |
+| text          | string                  | -                   | true     |
 
 *1
 | Types of Narrators    | Requirements                                                                       |
@@ -78,7 +77,7 @@ brew upgrade voicepeaky
 ```sh
 # Install with wget or curl
 ## set the latest version on releases.
-VERSION=v1.0.3
+VERSION=v1.0.4
 ## set the OS you use. (macos)
 OS=linux
 ## case you use wget
