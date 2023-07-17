@@ -21,10 +21,10 @@ voicepeaky -p 9999 -s
 
 Option is below.
 
-| Option    | Description                              |
-| --------- | ---------------------------------------- |
-| -p,--port | specify the port you want to serve       |
-| -s,--skip | skip old text when new text is requested |
+| Option    | Description                              | Default | Required |
+| --------- | ---------------------------------------- | ------- | -------- |
+| -p,--port | specify the port you want to serve       | 8080    | false    |
+| -s,--skip | skip old text when new text is requested | -       | false    |
 
 ### Request
 
