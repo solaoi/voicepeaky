@@ -55,11 +55,11 @@ see a sample [here](https://raw.githubusercontent.com/solaoi/voicepeaky/main/sam
 | Japanese Male 1       | [VOICEPEAK 商用可能 6ナレーターセット](https://www.ah-soft.com/voice/6nare/index.html) |
 | Japanese Male 2       | [VOICEPEAK 商用可能 6ナレーターセット](https://www.ah-soft.com/voice/6nare/index.html) |
 | Japanese Male 3       | [VOICEPEAK 商用可能 6ナレーターセット](https://www.ah-soft.com/voice/6nare/index.html) |
-| Japanese Male 4       | [VOICEPEAK 商用可能 ナレーター](https://www.ah-soft.com/voice/narrator/index.html)    |
+| Japanese Male4       | [VOICEPEAK 商用可能 ナレーター](https://www.ah-soft.com/voice/narrator/index.html)    |
 | Japanese Female 1     | [VOICEPEAK 商用可能 6ナレーターセット](https://www.ah-soft.com/voice/6nare/index.html) |
 | Japanese Female 2     | [VOICEPEAK 商用可能 6ナレーターセット](https://www.ah-soft.com/voice/6nare/index.html) |
 | Japanese Female 3     | [VOICEPEAK 商用可能 6ナレーターセット](https://www.ah-soft.com/voice/6nare/index.html) |
-| Japanese Female 4     | [VOICEPEAK 商用可能 ナレーター](https://www.ah-soft.com/voice/narrator/index.html)    |
+| Japanese Female4     | [VOICEPEAK 商用可能 ナレーター](https://www.ah-soft.com/voice/narrator/index.html)    |
 
 ## Install
 
