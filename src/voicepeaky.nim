@@ -86,8 +86,8 @@ proc pollingSpeeches() {.thread.} =
         var count = 0
         while true:
           count += 1
-          let errCode = execCmd("/Applications/voicepeak.app/Contents/MacOS/voicepeak --say " & speech.text &
-                  " --narrator \"" & speech.narrator &
+          let errCode = execCmd("/Applications/voicepeak.app/Contents/MacOS/voicepeak --say \"" & speech.text &
+                  "\" --narrator \"" & speech.narrator &
                   "\" --emotion happy=" & $speech.happy &
                   ",fun=" & $speech.fun &
                   ",angry=" & $speech.fun &
