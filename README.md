@@ -6,6 +6,8 @@
 
 This is a server to use voicepeak as api.
 
+For automatic adjustment of emotion, voice pitch, and speed, use [Voicepeaky GPT](https://github.com/solaoi/voicepeaky4gpt).
+
 ## Requirements
 
 - [VOICEPEAK 商用可能 6ナレーターセット](https://www.ah-soft.com/voice/6nare/index.html)
